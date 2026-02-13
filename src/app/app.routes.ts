@@ -5,6 +5,7 @@ import { Servicios } from './shared/servicios/servicios';
 import { Consultas } from './features/consultas/consultas';
 import { Mascotas } from './shared/mascotas/mascotas';
 import { Usuarios } from './features/usuarios/usuarios';
+import { FormCuenta } from './shared/form-cuenta/form-cuenta';
 
 export const routes: Routes = [
     //Ruta inicial
@@ -14,6 +15,7 @@ export const routes: Routes = [
     {path:'consultas', component:Consultas},
     {path:'mascotas', component:Mascotas},
     {path:'usuarios', component:Usuarios},
+    {path:'cuenta', component:FormCuenta},
 
 
     //FINAL
