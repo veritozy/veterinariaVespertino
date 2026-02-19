@@ -6,6 +6,8 @@ import { Consultas } from './features/consultas/consultas';
 import { Mascotas } from './shared/mascotas/mascotas';
 import { Usuarios } from './features/usuarios/usuarios';
 import { FormCuenta } from './shared/form-cuenta/form-cuenta';
+import { Login } from './shared/login/login';
+import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
     //Ruta inicial
@@ -14,8 +16,9 @@ export const routes: Routes = [
     {path:'acerca', component:Servicios},
     {path:'consultas', component:Consultas},
     {path:'mascotas', component:Mascotas},
-    {path:'usuarios', component:Usuarios},
+    {path:'usuarios', component:Usuarios, canActivate:[authGuard]},
     {path:'cuenta', component:FormCuenta},
+    {path:'login', component:Login},
 
 
     //FINAL

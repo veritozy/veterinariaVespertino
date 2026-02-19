@@ -3,6 +3,7 @@ import { UsuarioService } from '../../services/usuario-service';
 import { Usuario } from '../../models/usuario';
 import { FormsModule } from '@angular/forms';
 import { subscribeOn } from 'rxjs';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-formulario',
@@ -14,6 +15,8 @@ export class Formulario {
 
   private servicioUsuario = inject(UsuarioService);
 
+  public servicioAuth = inject(AuthService);
+
   //lista de usuarios reactiva
   listaUsuarios = signal<Usuario[]>([]);
 
@@ -21,7 +24,9 @@ export class Formulario {
   nuevoUsuario:Usuario={
     name:'',
     email:'',
-    phone:''
+    phone:'',
+    password:'',
+    rol:'EMPLEADO'
   };
 
   //Variable para controlar la etiqueta del botón registro
@@ -72,6 +77,6 @@ seleccionarParaEditar(user:Usuario){
 //Método para limpiar el formulario
 resetear(){
 this.editando=false;
-this.nuevoUsuario={name:'', email:'', phone:''};
+this.nuevoUsuario={name:'', email:'', phone:'', password:'', rol:'EMPLEADO'};
 }
 }
