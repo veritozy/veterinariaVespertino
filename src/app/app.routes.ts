@@ -8,12 +8,13 @@ import { Usuarios } from './features/usuarios/usuarios';
 import { FormCuenta } from './shared/form-cuenta/form-cuenta';
 import { Login } from './shared/login/login';
 import { authGuard } from './guards/auth-guard';
+import { Acerca } from './features/acerca/acerca';
 
 export const routes: Routes = [
     //Ruta inicial
     {path:'', component:Home},
     //Rutas de navegación
-    {path:'acerca', component:Servicios},
+    {path:'acerca', component:Acerca},
     {path:'consultas', component:Consultas},
     {path:'mascotas', component:Mascotas},
     {path:'usuarios', component:Usuarios, canActivate:[authGuard]},
